@@ -93,7 +93,8 @@ header
   font-size: 38px
   margin-bottom: 40px
   color: #263546
-.main-head-info a
+.main-head-info a,
+.form-content a
   font-weight: 500
   font-size: 16px
   line-height: 16px
@@ -104,6 +105,8 @@ header
   padding: 22px 54px
   box-shadow: -15px -15px#F0F4F6
   width: max-content
+.form-content a
+  margin: 0 auto
 .main-head-info
   display: flex
   flex-direction: column
@@ -217,12 +220,14 @@ header
 .item-img
   padding: 40px
 .clients-content,
-.principles-content
+.principles-content,
+.form-content
   display: flex
   flex-direction: column
   padding-bottom: 60px
 .clients-header,
-.principles-header
+.principles-header,
+.form-header
   display: flex
   flex-direction: column
   justify-content: center
@@ -231,7 +236,8 @@ header
   margin-top: 80px
   max-width:562px
 .clients-header h1,
-.principles-header h1
+.principles-header h1,
+.form-header h1
   font-weight: bold
   font-size: 38px
   line-height: 54px
@@ -239,14 +245,16 @@ header
   span
     color: #678DAD
 .clients-header h2,
-.principles-header h2
+.principles-header h2,
+.form-header h2
   font-weight: 300
   font-size: 16px
   line-height: 28px
   text-align: center
   color: #384F65
   padding-top: 15px
-.principles-header
+.principles-header,
+.form-header
   margin-bottom: 60px
 .clients-logo
   display: flex
@@ -298,3 +306,75 @@ header
   user-select: none
   text-align: right
   margin: 0
+.principles-item-light
+  position: relative
+  background: #FFFFFF
+  border: 1px solid #1C5368
+  box-sizing: border-box
+  border-radius: 4px
+  display: flex
+  flex-direction: column
+  width: 570px
+  height: 220px
+  padding: 45px 60px
+  margin-bottom: 30px
+.principles-title-light
+  position: absolute
+  font-family: 'Poppins', sans-serif
+  font-style: normal
+  font-weight: 600
+  font-size: 24px
+  line-height: 26px
+  color: #263546
+  padding: 17px 19px
+  background-color: #ffffff
+  left: 40px
+  top: -30px
+.principles-subtitle-light
+  font-family: 'Poppins', sans-serif
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 26px
+  color: #384F65
+  margin-bottom: 30px
+.principles-link
+  font-family: 'Poppins', sans-serif
+  font-style: normal
+  font-weight: 600
+  font-size: 16px
+  line-height: 16px
+  color: #1169B2
+  text-decoration: none
+.form-main
+  padding: 60px 110px
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+.form-main input,
+.form-main textarea
+  outline: none
+.short
+  width: 32%
+  height: 70px
+  margin-bottom: 10px
+  &::placeholder
+    font-family: 'Poppins', sans-serif
+    font-style: normal
+    padding: 0 30px
+.middle
+  width: 49%
+  height: 70px
+  margin-bottom: 10px
+  &::placeholder
+    font-family: 'Poppins', sans-serif
+    font-style: normal
+    padding: 0 30px
+#about
+  width: 100%
+  resize: none
+  height: 120px
+  &::placeholder
+    font-family: 'Poppins', sans-serif
+    font-style: normal
+    padding: 17px 30px
