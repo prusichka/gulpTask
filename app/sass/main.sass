@@ -1,6 +1,12 @@
 @import "normalize.sass"
+input,textarea
+  font-family: 'Poppins',sans-serif
+  font-style: normal
+  font-weight: 300
+  font-size: 22px
+  color: #384f65
 header
-  border-bottom: 1px solid #1E5268
+  border-bottom: 1px solid  rgb(30,82,104,0.05)
 .container
   max-width: 1170px
   margin: 0 auto
@@ -277,7 +283,7 @@ header
   display: flex
   flex-direction: column
   width: 570px
-  height: 220px
+  min-height: 220px
   padding: 45px 60px
   margin-bottom: 30px
 .principles-title
@@ -473,3 +479,265 @@ footer
       font-size: 14px
       line-height: 14px
       color: #FFFFFF
+
+// -----------------Mobile-----------------
+
+#mobile__menu
+  position: fixed
+  left: -250px
+  width: 250px
+  height: 100%
+  background-color: #384f65
+  z-index: 999
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+    text-decoration: none
+    a
+      display: block
+      height: 100%
+      width: 100%
+      line-height: 65px
+      font-size: 20px
+      color: #ffffff
+      padding-left: 40px
+      box-sizing: border-box
+      border-top: 1px solid rgba(255,255 ,255,.1 )
+      text-decoration: none
+      border-bottom: 1px solid black
+      transition: .4s
+    li
+      &:hover
+        padding-left: 40px
+#check
+  display: none
+label #btn,label #cancel
+  position: fixed
+  cursor: pointer
+label #btn
+  left: 40px
+  top: 25px
+  font-size: 35px
+  color: #0a5275
+  display: none
+label #cancel
+  z-index: 1111
+  left: -246px
+  top: 17px
+  font-size: 30px
+  color: white
+  padding: 4px 9px 
+#check:checked ~ #mobile__menu
+  left: 0
+    
+#check:checked ~ label #cancel
+  left: 200px
+  top: 20px
+#check:checked ~ label #btn
+  left: -300px
+  opacity: 0
+  pointer-events: none
+#check-solutions,
+#check-procurement,
+#check-about
+  display: none
+
+
+
+
+#check-solutions:checked ~ #footer-1
+  display: flex
+#check-procurement:checked ~ #footer-2
+  display: flex
+#check-about:checked ~ #footer-3
+  display: flex
+
+.menu-punkt
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  margin-top: 10px
+  border-bottom: 2px solid black
+  display: none
+  a
+    text-decoration: none
+    color: #263546
+    font-family: 'Roboto', sans-serif
+    font-style: normal
+    font-weight: 300
+    &:hover
+      cursor: pointer
+      color: black
+      font-weight: 400
+  #title-nav,h1
+    font-family: 'Poppins', sans-serif
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+    line-height: 14px
+    color: #263546
+    cursor: pointer
+  ul
+    display: flex
+    flex-direction: column
+    justify-content: center
+    list-style: none
+    margin: 0
+    padding: 0
+    display: none
+  li
+    margin: 10px 0
+  label h1 
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+// -------------Adaptive-------------
+@media screen and (max-width: 1220px)
+  .nav-desctop ul
+    display: none
+  .header-content
+    flex-direction: row-reverse
+  .container
+    max-width: 85%
+  .main-head-info h2
+    font-size: 26px
+    margin-bottom: 20px
+    line-height: 43px
+  .main-head-info h1
+    font-size: 28px
+    margin-bottom: 20px
+  .main-head-info a
+    margin-top: 20px
+  .form-content a
+    margin-top: 50px
+  .main-banner-info h3
+    font-size: 88px
+    margin-top: 75px
+  .main-banner-info h1
+    font-size: 28px
+    margin-bottom: 15px
+  .main-banner-info h2
+    font-size: 14px
+    margin-bottom: 20px
+  .main-banner-info a
+    font-size: 10px
+  .main-banner-info-content
+    padding: 0 5%
+  .principles-main
+    justify-content: center
+  .form-main
+    padding: 60px
+  .short
+    width: 31%
+  .middle
+    width: 48%
+  .footer-nav #title-nav
+    font-size: 14px
+  .footer-nav a
+    font-size: 14px
+  label #btn
+    display: flex
+
+
+
+@media screen and (max-width: 948px)
+  .container
+    max-width: 90%
+  .main-banner-img
+    box-shadow: -25px -25px #f0f4f6
+
+
+@media screen and (max-width: 853px)
+  .footer-nav
+    display: none
+  .menu-punkt
+    display: flex
+
+@media screen and (max-width: 822px)
+  .actions-main
+    justify-content: center
+  .main-banner-content, .main-head-content
+    flex-direction: column
+  .main-head-info
+    margin-bottom: 30px
+  .short,.middle
+    height: 50px
+  #about
+    height: 90px
+@media screen and (max-width: 650px)
+  .main-head-info h2
+    font-size: 18px
+  .main-head-info h1
+    font-size: 20px
+  .main-head-info a
+    padding: 16px 27px
+    font-size: 12px
+  .actions-title h1
+    font-size: 28px
+  .actions-title h2
+    font-size: 14px
+    padding-top: 5px
+  .actions-title
+    margin-bottom: 30px
+  .clients-header h1, .form-header h1, .principles-header h1
+    font-size: 28px
+  .clients-header h2, .form-header h2, .principles-header h2
+    font-size: 14px
+    padding-top: 5px
+  .clients-logo
+    flex-direction: column
+    align-items: center
+  .principles-num
+    left: 70%
+  .clients-content, .principles-content
+    padding-bottom: 30px
+  .form-header, .principles-header
+    margin: 40px
+  .form-main
+    padding: 60px 15px
+  .clients-logo-item
+    width: 150px
+    height: 150px
+
+@media screen and (max-width: 544px)
+  .short,.middle
+    width: 100%
+  .footer-head
+    flex-direction: column
+  .footer-head-contact
+    text-align: left
+    margin-top: 15px
+  .logo, .nav-desctop
+    display: flex
+    justify-content: space-between
+  .footer-head-contact
+    align-items: center
+  .footer-head-contact
+    padding-top: 10px
+  .footer-footer
+    margin-top: 40px
+
+@media screen and (max-width: 434px)
+  .principles-num
+    left: 60%
+  .main-head-info
+    align-items: center
+  .main-banner-info h3
+    font-size: 70px
+  .principles-item,
+  .principles-item-light
+    padding: 22px 30px
+  .principles-title-light
+    padding: 0
+    top: -15px
+    font-size: 18px
+  .principles-subtitle
+    font-size: 16px
+  #logo-title
+    display: none
+  .main-head-info h2
+    text-align: center
+
+

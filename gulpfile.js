@@ -59,8 +59,8 @@ function scripts() {
 
 async function images() {
   imagecomp(
-    'app/img/src/**/*',
-    'app/img/dest/',
+    'app/img/**/*',
+    'app/img/',
     { compress_force: false, statistic: true, autoupdate: true },
     false,
     { jpg: { engine: 'mozjpeg', command: ['-quality', '75'] } },
@@ -78,13 +78,13 @@ async function images() {
 }
 
 function cleanimg() {
-  return del('app/img/dest/**/*', { force: true })
+  return del('app/img/**/*', { force: true })
 }
 
 function startWatch() {
   watch('app/**/' + preprocessor + '/**/*', styles)
   watch('app/**/*.html').on('change', browserSync.reload)
-  watch('app/img/src/**/*', images)
+  watch('app/img/**/*', images)
 }
 
 function buildcopy() {
@@ -93,15 +93,15 @@ function buildcopy() {
       // Выбираем нужные файлы
       'app/css/**/*.min.css',
       'app/js/**/*.min.js',
-      'app/images/dest/**/*',
+      'app/img/**/*',
       'app/**/*.html',
     ],
     { base: 'app' },
-  ) // Параметр "base" сохраняет структуру проекта при копировании
-    .pipe(dest('dist')) // Выгружаем в папку с финальной сборкой
+  )
+    .pipe(dest('dist'))
 }
 function cleandist() {
-  return del('dist/**/*', { force: true }) // Удаляем все содержимое папки "dist/"
+  return del('dist/**/*', { force: true }) //
 }
 
 //*-------------------------------------------Function--------------------------------------------------------//
@@ -115,5 +115,5 @@ exports.styles = styles
 exports.images = images
 exports.cleanimg = cleanimg
 
-exports.build = series(cleandist, styles, buildcopy)
+exports.build = series(cleandist, styles, images, buildcopy)
 //*-------------------------------------------Exports--------------------------------------------------------//
