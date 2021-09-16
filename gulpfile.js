@@ -4,6 +4,8 @@ let preprocessor = 'sass'
 
 const { src, dest, series, parallel, watch } = require('gulp')
 
+const gulp = require('gulp');
+
 const browserSync = require('browser-sync').create()
 
 const concat = require('gulp-concat')
@@ -19,6 +21,8 @@ const cleancss = require('gulp-clean-css')
 const imagecomp = require('compress-images')
 
 const del = require('del')
+
+const ghPages = require('gulp-gh-pages')
 
 //*-------------------------------------------Variable--------------------------------------------------------//
 
@@ -103,6 +107,11 @@ function buildcopy() {
 function cleandist() {
   return del('dist/**/*', { force: true }) //
 }
+
+gulp.task('deploy', function() {
+  return gulp.src('./build/**/*')
+    .pipe(ghPages());
+});
 
 //*-------------------------------------------Function--------------------------------------------------------//
 
