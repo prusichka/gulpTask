@@ -2,9 +2,8 @@
 
 let preprocessor = 'sass'
 
-const { src, dest, series, parallel, watch } = require('gulp')
+const { src, dest, series, parallel, watch, task } = require('gulp')
 
-const gulp = require('gulp');
 
 const browserSync = require('browser-sync').create()
 
@@ -46,9 +45,9 @@ function styles() {
     )
     .pipe(
       cleancss({
-        level: { 1: { specialComments: 0 } } /* , format: 'beautify' */,
+        level: { 1: { specialComments: 0 } }
       }),
-    ) // Минифицируем стили
+    ) 
     .pipe(dest('app/css/'))
     .pipe(browserSync.stream())
 }
@@ -81,6 +80,8 @@ async function images() {
   )
 }
 
+task('deploy', () => src('./dist/**/*').pipe(ghPages()));
+
 function cleanimg() {
   return del('app/img/**/*', { force: true })
 }
@@ -107,11 +108,6 @@ function buildcopy() {
 function cleandist() {
   return del('dist/**/*', { force: true }) //
 }
-
-gulp.task('deploy', function() {
-  return gulp.src('./build/**/*')
-    .pipe(ghPages());
-});
 
 //*-------------------------------------------Function--------------------------------------------------------//
 
