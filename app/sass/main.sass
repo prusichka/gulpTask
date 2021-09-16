@@ -106,7 +106,8 @@ header
   box-shadow: -15px -15px#F0F4F6
   width: max-content
 .form-content a
-  margin: 0 auto
+  margin:0 auto
+  margin-top: 50px
 .main-head-info
   display: flex
   flex-direction: column
@@ -220,11 +221,13 @@ header
 .item-img
   padding: 40px
 .clients-content,
-.principles-content,
-.form-content
+.principles-content
   display: flex
   flex-direction: column
   padding-bottom: 60px
+.form-content
+  display: flex
+  flex-direction: column
 .clients-header,
 .principles-header,
 .form-header
@@ -351,6 +354,9 @@ header
   display: flex
   flex-wrap: wrap
   justify-content: space-between
+  background: #FFFFFF
+  box-shadow: 0px 8px 20px rgba(14, 44, 55, 0.1)
+  border-radius: 4px
 .form-main input,
 .form-main textarea
   outline: none
@@ -378,3 +384,92 @@ header
     font-family: 'Poppins', sans-serif
     font-style: normal
     padding: 17px 30px
+footer
+  background: #F8F8F8
+  padding-top: 60px
+.footer-head
+  display: flex
+  justify-content: space-between
+.footer-head-contact
+  display: flex
+  flex-direction: column
+  justify-content: center
+  text-align: right
+  font-family: 'Poppins', sans-serif
+  font-style: normal
+.footer-head-contact h1
+  font-weight: 500
+  font-size: 20px
+  line-height: 30px
+  color: #1E5268
+  margin-bottom: 10px
+.footer-head-contact h2 
+  font-weight: normal
+  font-size: 16px
+  line-height: 24px
+  color: #1E5268
+  margin-bottom: 10px
+.footer-nav
+  display: flex
+  justify-content: space-between
+  margin-top: 40px
+  a
+    text-decoration: none
+    color: #263546
+    font-family: 'Roboto', sans-serif
+    font-style: normal
+    font-weight: 300
+    &:hover
+      text-decoration: underline
+      font-weight: 500
+      font-size: 16px
+      line-height: 14px
+  #title-nav
+    font-family: 'Poppins', sans-serif
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+    line-height: 14px
+    color: #263546
+  ul
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    list-style: none
+    margin: 0
+    padding-right: 10px
+    padding: 0
+  li
+    margin: 18px 0
+    border-right: 5.5px solid #f8f8f8
+    &:hover
+      border-right: none
+  #about-ul
+    justify-content: flex-start
+    li
+      margin: 18px 0
+      border-right: 3px solid #f8f8f8
+      &:hover
+        border-right: none
+.footer-footer
+  background: #1C5368
+  margin-top: 95px
+  .footer-footer-content
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 18px 0
+    h1
+      font-family: 'Poppins', sans-serif
+      font-style: normal
+      font-weight: 300
+      font-size: 14px
+      line-height: 14px
+      color: #FFFFFF
+    h2
+      font-family: 'Roboto', sans-serif
+      font-style: normal
+      font-weight: 300
+      font-size: 14px
+      line-height: 14px
+      color: #FFFFFF
